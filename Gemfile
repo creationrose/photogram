@@ -18,6 +18,7 @@ gem 'coffee-rails', '~> 4.1.0'
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'pry'
+gem 'bcrypt-ruby', '~> 3.1.5', require: "bcrypt"
 
 group :development do
   gem 'byebug'  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
