@@ -11,9 +11,14 @@ class User < ActiveRecord::Base
 	end
 
 	def self.authenticate(email, password)
-	end
+		user = User.where(email: email).first
+    if user && user.password_hash == BCrypt::Engine.hash_secret(password, user.password_salt)
+       user
+    else
+      nil
+	  end
+  end
 end
-
 
 
  #User model does not actually have a password column in the database. 
