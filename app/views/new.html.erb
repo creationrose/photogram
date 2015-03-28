@@ -1,0 +1,17 @@
+<h1><%= current_user.email %><small> Edit your profile</small></h1>
+
+
+<%= form_for current_user do |f| %>
+  <%= f.file_field :photo %>
+  <button class="btn btn-primary btn-xs">Update Photo</button><br><br>
+  <% end %>
+
+<h2>Upload your photos</h2>
+<%= form_for [@user, @photo] do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <%= f.label :caption %>
+  <%= f.text_field :caption %>
+  <%= f.file_field :photo %>
+  <button class="btn btn-primary btn-xs">Add photo</button>
+<% end %>

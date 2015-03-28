@@ -1,10 +1,14 @@
 Rails.application.routes.draw do
 
   resources :users
+  resources :photos
 
+  match('/', :via => :get, :to => 'home#index')
 	get "/log-in" => "sessions#new"
 	post "/log-in" => "sessions#create"
 	get "/log-out" => "sessions#destroy", as: :log_out
+	get "/photos" => "photos#new"
+   post "/photos" => "photos#create"
 
 end
 

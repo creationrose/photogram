@@ -1,0 +1,48 @@
+<h1>Welcome to PhotoGram</h1>
+<em><p>The place to share photos with your friends and family</p></em>
+
+</br>
+
+<% if current_user %>
+
+
+
+<div class="column2" id="images">
+  <% @photos.each do |photo| %>
+    <h4><%= photo.name %> <small><em><%= photo.caption %> by <%= photo.user_id %></em></small> </h4>
+    <%= image_tag photo.photo.url(:medium) %> <br>
+  <% end %>
+</div>
+
+<div class="column">
+  <h3>Our Members</h3>
+    <% @users.each do |person| %>
+      <div class="users">
+      <p><%= image_tag person.photo.url(:thumb) %> <%= person.email %> </p>
+      </div>
+    <% end %>
+<% end %>
+
+
+
+
+<p>Go to <a href="">Log In</a> page.</p>
+
+</br>
+
+<p>No Account? Sign up <a href="/users/new">HERE</a>!</p>
+
+
+
+
+<!-- 
+
+Implement in erb:
+
+ = link_to "New Post", new_post_path
+    = link_to "Sign out", destroy_user_session_path, :method => :delete
+   
+  - else
+    = link_to "Sign Up", new_user_registration_path
+    = link_to "Sign In", new_user_session_path
+ -->

@@ -19,6 +19,8 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'pry'
 gem 'bcrypt-ruby', '~> 3.1.5', require: "bcrypt"
+gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
+gem "mongoid-paperclip", :require => "mongoid_paperclip"
 
 group :development do
   gem 'byebug'  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
